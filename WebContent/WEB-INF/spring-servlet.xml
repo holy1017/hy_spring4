@@ -7,12 +7,12 @@ xmlns:context="http://www.springframework.org/schema/context"
 xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
 	<mvc:annotation-driven/>	
 	<context:component-scan base-package="com.hy">
-		<context:include-filter type="annotation"
+		<!-- <context:include-filter type="annotation"
 			expression="org.springframework.stereotype.Controller" />
 		<context:exclude-filter type="annotation"
-			expression="org.springframework.stereotype.Service" />
+			expression="org.springframework.stereotype.Service" /> -->
 	</context:component-scan>
-    <bean id="deptController" class="com.hy.DeptController"/>	
+    <!-- <bean id="deptController" class="com.hy.DeptController"/>	 -->
 	<bean id="viewResolver"
 	class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix"><!-- 접두어 -->
@@ -23,4 +23,5 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.sprin
 		</property>
 		<!-- 응답페이지 URL이 완성된다. -->
 	</bean>		
+	<context:component-scan base-package="com" />
 </beans>

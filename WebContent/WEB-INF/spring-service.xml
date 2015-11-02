@@ -13,7 +13,10 @@
 		class="org.springframework.context.support.ResourceBundleMessageSource">
 		<property name="basename" value="message_ko_KR" />
 	</bean>
+	
 	<bean id="deptLogic" class="com.hy.DeptLogic" />
+	
+<!-- 	<tx:annotation-driven transaction-manager="txManager" /> -->
 </beans>
 
 

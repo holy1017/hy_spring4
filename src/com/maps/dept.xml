@@ -20,6 +20,13 @@
 	<insert id="deptInsert" parameterType="com.vo.DeptVO">
 		INSERT INTO dept VALUES(#{deptno},#{dname},#{loc})
 	</insert>	  
+	<insert id="empInsert" parameterType="HashMap">
+	<!-- 의도적 에러 발생시켜보기. 트랜젝션 테스트 -->
+		INSERT INTO emp(deptno,empno,ename1) VALUES(
+		#{deptno},
+		#{empno},
+		#{ename})
+	</insert>	  
 	<update id="deptUpdate" parameterType="com.vo.DeptVO">
 		UPDATE dept SET dname=#{dname}, loc=#{loc} where deptno = #{deptno}
 	</update>	  
