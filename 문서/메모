@@ -1,0 +1,31 @@
+첫페이지
+: 목록페이지
+
+목록 페이지 : list.jsp
+-레이아웃
+: 글 목록; 글번호,글제목
+: 글쓰기버튼(./writeForm.hy)
+-기능
+: 요청 유지; scop:page,request,session,application
+: forward,sendRedirect
+-저장
+: request.setAttribute("bList",bList);
+: model.addAttribute("bList",bList);
+-불러오기
+: List<BoardVO> bList= request.getParameter("bList")
+
+
+글쓰기 페이지ui : writeForm.jsp
+: @RequestMapping(value="./writeForm.hy",method=RequestMapping.POST)
+public String writeForm(){
+return "redirect:./writeForm.jsp";
+}
+: 글제목
+: 글쓴이
+: 글내용
+: 글등록버튼 
+: insert into mvc_board value(vo)
+: request.getParameter("bWrite")
+: @ModelAttribute(vo)
+: BoardController-BoardLogic-SqlBoardDao-boardSql.xml
+: 응답페이지->list.jsp

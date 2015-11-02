@@ -1,0 +1,8 @@
+	@RequestMapping("/some.do")
+    public ModelAndView draw(@ModelAttribute("specified") MyModel myModel) {
+        // ...
+    } 
+    // 위 값은 JSP에서 ${specified} 혹은 
+    // <%=request.getAttribute("specified")%>로 가져올 수 있다.
+    
+    
